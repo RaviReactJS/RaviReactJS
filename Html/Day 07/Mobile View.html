@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        .sidebar, .content {
+            background-color: #ccff00;
+            padding: 1em;
+            margin: 0.5em 0;
+        }
+        .sidebar {
+            order: 1;
+        }
+        .content {
+            order: 2;
+        }
+        
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+            }
+            .sidebar, .content {
+                flex: 1;
+                margin: 0.5em;
+            }
+            .sidebar {
+                order: 1;
+            }
+            .content {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Responsive Layout</h1>
+        </header>
+        <main>
+            <div class="sidebar">
+                Sidebar Content
+            </div>
+            <div class="content">
+                Main Content
+            </div>
+        </main>
+        <footer>
+            Footer Content
+        </footer>
+    </div>
+</body>
+</html>
